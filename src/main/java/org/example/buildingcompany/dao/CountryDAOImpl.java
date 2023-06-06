@@ -59,11 +59,11 @@ public class CountryDAOImpl implements ICountryDAO {
         return countries;
     }
 
-    public void update(Country country) throws SQLException, InterruptedException {
+    public void update(Country country, Integer id) throws SQLException, InterruptedException {
         Connection connection = ConnectionPool.getInstance().getConnection();
         PreparedStatement statement = connection.prepareStatement(UPDATE);
         statement.setString(1, country.getName());
-        statement.setInt(2, country.getId());
+        statement.setInt(2, id);
         int rowsUpdated = statement.executeUpdate();
         if(rowsUpdated > 0) {
             logger.info("Country updated: " + country);
