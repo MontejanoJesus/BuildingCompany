@@ -1,25 +1,24 @@
 package org.example.buildingcompany.classes;
 
 public class Client {
-    private Integer id;
+    private Long id;
     private String name;
     private String phoneNumber;
     private Address address;
 
     public Client() {}
 
-    public Client(Integer id, String name, String phoneNumber, Address address) {
-        this.id = id;
+    public Client(String name, String phoneNumber, Address address) {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.address = address;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

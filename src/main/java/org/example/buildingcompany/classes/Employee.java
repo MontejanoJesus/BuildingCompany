@@ -3,7 +3,7 @@ package org.example.buildingcompany.classes;
 import java.sql.Date;
 
 public class Employee {
-    private Integer id;
+    private Long id;
     private String firstName;
     private String lastName;
     private Date hireDate;
@@ -13,8 +13,7 @@ public class Employee {
 
     public Employee(){}
 
-    public Employee(Integer id, String firstName, String lastName, Date hireDate, String phoneNumber, Address address, Project project) {
-        this.id = id;
+    public Employee(String firstName, String lastName, Date hireDate, String phoneNumber, Address address, Project project) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.hireDate = hireDate;
@@ -23,11 +22,11 @@ public class Employee {
         this.project = project;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

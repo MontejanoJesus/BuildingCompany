@@ -22,17 +22,16 @@ public class ConnectionPool {
     public static synchronized ConnectionPool getInstance() throws SQLException, InterruptedException {
         if(instance == null) {
             instance = new ConnectionPool();
-            for(int i = 0; i < POOL_SIZE; i++) {
-                pool.put(DriverManager.getConnection(dbUrl, username, password));
-            }
         }
         return instance;
     }
 
     public synchronized Connection getConnection() throws SQLException, InterruptedException {
+        pool.put(DriverManager.getConnection(dbUrl, username, password));
         return pool.take();
     }
-    public synchronized void releaseConnection() throws SQLException, InterruptedException {
+    public synchronized void releaseConnection(Connection connection) throws SQLException, InterruptedException {
+        connection.close();
         pool.put(DriverManager.getConnection(dbUrl, username, password));
     }
 

@@ -1,7 +1,7 @@
 package org.example.buildingcompany.classes;
 
 public class Project {
-    private Integer id;
+    private Long id;
     private String name;
     private String description;
     private Integer cost;
@@ -10,8 +10,7 @@ public class Project {
 
     public Project(){}
 
-    public Project(Integer id, String name, String description, Integer cost, Client client, Address address) {
-        this.id = id;
+    public Project(String name, String description, Integer cost, Client client, Address address) {
         this.name = name;
         this.description = description;
         this.cost = cost;
@@ -19,11 +18,11 @@ public class Project {
         this.address = address;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
