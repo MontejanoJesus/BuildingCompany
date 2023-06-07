@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addresses>
+	<address>
+		<id>1</id>
+		<address>1111 s figueroa st</address>
+		<postal_code>90015</postal_code>
+		<city_id>1</city_id>
+	</address>
+
+	<address>
+		<id>2</id>
+		<address>1234 sepulva ave</address>
+		<postal_code>91608</postal_code>
+		<city_id>2</city_id>
+	</address>
+
+	<address>
+		<id>3</id>
+		<address>505 n figueroa st</address>
+		<postal_code>90012</postal_code>
+		<city_id>1</city_id>
+	</address>
+
+	<address>
+		<id>4</id>
+		<address>7894 hollywood blvd</address>
+		<postal_code>91606</postal_code>
+		<city_id>2</city_id>
+	</address>
+
+	<address>
+		<id>5</id>
+		<address>90001 w hollywood ave</address>
+		<postal_code>91117</postal_code>
+		<city_id>2</city_id>
+	</address>
+
+	<address>
+		<id>6</id>
+		<address>7546 lincoln ave</address>
+		<postal_code>92504</postal_code>
+		<city_id>3</city_id>
+	</address>
+
+	<address>
+		<id>7</id>
+		<address>2864 jackson ave</address>
+		<postal_code>92503</postal_code>
+		<city_id>3</city_id>
+	</address>
+
+	<address>
+		<id>8</id>
+		<address>2864 indiana ave</address>
+		<postal_code>92503</postal_code>
+		<city_id>3</city_id>
+	</address>
+
+	<address>
+		<id>9</id>
+		<address>2855 tyler ave</address>
+		<postal_code>92503</postal_code>
+		<city_id>3</city_id>
+	</address>
+</addresses>

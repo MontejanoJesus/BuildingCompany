@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+	<employee>
+		<id>1</id>
+		<first_name>jason</first_name>
+		<last_name>smith</last_name>
+		<hire_date>2023-05-31</hire_date>
+		<phone_number>8189751234</phone_number>
+		<address_id>2</address_id>
+		<project_id>NULL</project_id>
+	</employee>
+
+	<employee>
+		<id>2</id>
+		<first_name>Jared</first_name>
+		<last_name>young</last_name>
+		<hire_date>2020-03-28</hire_date>
+		<phone_number>7078456134</phone_number>
+		<address_id>5</address_id>
+		<project_id>NULL</project_id>
+	</employee>
+
+	<employee>
+		<id>3</id>
+		<first_name>bryan</first_name>
+		<last_name>williams</last_name>
+		<hire_date>2021-06-11</hire_date>
+		<phone_number>9518462587</phone_number>
+		<address_id>6</address_id>
+		<project_id>NULL</project_id>
+	</employee>
+</employees>

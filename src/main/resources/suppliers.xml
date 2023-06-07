@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppliers>
+	<supplier>
+		<id>1</id>
+		<name>supreme concrete</name>
+		<phone_number>3108907102</phone_number>
+		<address_id>3</address_id>
+	</supplier>
+
+	<supplier>
+		<id>2</id>
+		<name>cat construction</name>
+		<phone_number>9517845124</phone_number>
+		<address_id>7</address_id>
+	</supplier>
+
+	<supplier>
+		<id>3</id>
+		<name>whacky wood</name>
+		<phone_number>9516428246</phone_number>
+		<address_id>8</address_id>
+	</supplier>
+
+	<supplier>
+		<id>4</id>
+		<name>iron steele</name>
+		<phone_number>9512589317</phone_number>
+		<address_id>9</address_id>
+	</supplier>
+</suppliers>

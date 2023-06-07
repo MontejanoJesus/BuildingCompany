@@ -80,14 +80,12 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "\nEmployee{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", hireDate=" + hireDate +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", address=" + address.getAddress() +
-                ", project=" + project.getName() +
+                ", phoneNumber='" + phoneNumber +
                 '}';
     }
 }
