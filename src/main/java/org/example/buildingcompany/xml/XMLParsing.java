@@ -55,7 +55,7 @@ public class XMLParsing {
         Countries countries = (Countries) unmarshaller.unmarshal(file1);
         //logger.info(country);
         for(Country country : countries.getCountries()) {
-            System.out.println(country);
+            logger.info(country);
         }
 
     }
