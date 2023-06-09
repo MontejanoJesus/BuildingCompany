@@ -4,10 +4,10 @@ import org.example.buildingcompany.classes.Project;
 import org.example.buildingcompany.dao.impl.AddressDAOImpl;
 import org.example.buildingcompany.dao.impl.ClientDAOImpl;
 import org.example.buildingcompany.dao.impl.ProjectDAOImpl;
-import org.example.buildingcompany.dao.interfaces.IAddressDAO;
-import org.example.buildingcompany.dao.interfaces.IClientDAO;
-import org.example.buildingcompany.dao.interfaces.IProjectDAO;
-import org.example.buildingcompany.service.interfaces.IProjectService;
+import org.example.buildingcompany.dao.IAddressDAO;
+import org.example.buildingcompany.dao.IClientDAO;
+import org.example.buildingcompany.dao.IProjectDAO;
+import org.example.buildingcompany.service.IProjectService;
 
 import java.sql.SQLException;
 import java.util.List;

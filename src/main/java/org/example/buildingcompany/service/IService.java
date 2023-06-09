@@ -1,4 +1,4 @@
-package org.example.buildingcompany.service.interfaces;
+package org.example.buildingcompany.service;
 
 import java.sql.SQLException;
 import java.util.List;

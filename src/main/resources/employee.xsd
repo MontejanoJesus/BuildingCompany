@@ -6,12 +6,104 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" type="xs:long" />
-              <xs:element name="first_name" type="xs:string" />
-              <xs:element name="last_name" type="xs:string" />
-              <xs:element name="hire_date" type="xs:date" />
-              <xs:element name="phone_number" type="xs:string" />
-              <xs:element name="address_id" type="xs:long" />
-              <xs:element name="project_id" type="xs:long" />
+              <xs:element name="firstName" type="xs:string" />
+              <xs:element name="lastName" type="xs:string" />
+              <xs:element name="hireDate" type="xs:date" />
+              <xs:element name="phoneNumber" type="xs:string" />
+              <xs:element name="address">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:long" />
+                    <xs:element name="address" type="xs:string" />
+                    <xs:element name="postalCode" type="xs:string" />
+                    <xs:element name="city">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="id" type="xs:long" />
+                          <xs:element name="name" type="xs:string" />
+                          <xs:element name="country">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:long" />
+                                <xs:element name="name" type="xs:string" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="project">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="id" type="xs:long" />
+                    <xs:element name="name" type="xs:string" />
+                    <xs:element name="description" type="xs:string" />
+                    <xs:element name="cost" type="xs:integer" />
+                    <xs:element name="client">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="id" type="xs:long" />
+                          <xs:element name="name" type="xs:string" />
+                          <xs:element name="phoneNumber" type="xs:string" />
+                          <xs:element name="address">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:long" />
+                                <xs:element name="address" type="xs:string" />
+                                <xs:element name="postalCode" type="xs:string" />
+                                <xs:element name="city">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="id" type="xs:long" />
+                                      <xs:element name="name" type="xs:string" />
+                                      <xs:element name="country">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="id" type="xs:long" />
+                                            <xs:element name="name" type="xs:string" />
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="address">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="id" type="xs:long" />
+                          <xs:element name="address" type="xs:string" />
+                          <xs:element name="postalCode" type="xs:string" />
+                          <xs:element name="city">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="id" type="xs:long" />
+                                <xs:element name="name" type="xs:string" />
+                                <xs:element name="country">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="id" type="xs:long" />
+                                      <xs:element name="name" type="xs:string" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

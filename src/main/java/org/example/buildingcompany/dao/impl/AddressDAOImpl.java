@@ -3,7 +3,7 @@ package org.example.buildingcompany.dao.impl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.example.buildingcompany.classes.Address;
-import org.example.buildingcompany.dao.interfaces.IAddressDAO;
+import org.example.buildingcompany.dao.IAddressDAO;
 import org.example.buildingcompany.utils.ConnectionPool;
 
 import java.sql.Connection;

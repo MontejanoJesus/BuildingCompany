@@ -1,4 +1,4 @@
-package org.example.buildingcompany.dao.interfaces;
+package org.example.buildingcompany.dao;
 
 import org.example.buildingcompany.classes.Address;
 

@@ -3,9 +3,9 @@ package org.example.buildingcompany.service.impl;
 import org.example.buildingcompany.classes.Material;
 import org.example.buildingcompany.dao.impl.MaterialDAOImpl;
 import org.example.buildingcompany.dao.impl.SupplierDAOImpl;
-import org.example.buildingcompany.dao.interfaces.IMaterialDAO;
-import org.example.buildingcompany.dao.interfaces.ISupplierDAO;
-import org.example.buildingcompany.service.interfaces.IMaterialService;
+import org.example.buildingcompany.dao.IMaterialDAO;
+import org.example.buildingcompany.dao.ISupplierDAO;
+import org.example.buildingcompany.service.IMaterialService;
 
 import java.sql.SQLException;
 import java.util.List;

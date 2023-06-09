@@ -2,31 +2,175 @@
 <employees>
 	<employee>
 		<id>1</id>
-		<first_name>jason</first_name>
-		<last_name>smith</last_name>
-		<hire_date>2023-05-31</hire_date>
-		<phone_number>8189751234</phone_number>
-		<address_id>2</address_id>
-		<project_id>NULL</project_id>
+		<firstName>jason</firstName>
+		<lastName>smith</lastName>
+		<hireDate>2023-05-31</hireDate>
+		<phoneNumber>8189751234</phoneNumber>
+		<address>
+			<id>1</id>
+			<address>1234 lost ave</address>
+			<postalCode>92503</postalCode>
+			<city>
+				<id>1</id>
+				<name>riverside</name>
+				<country>
+					<id>1</id>
+					<name>united states</name>
+				</country>
+			</city>
+		</address>
+		<project>
+			<id>1</id>
+			<name>office building</name>
+			<description>building with offices</description>
+			<cost>1000000</cost>
+			<client>
+				<id>2</id>
+				<name>commercial offices</name>
+				<phoneNumber>7048456794</phoneNumber>
+				<address>
+					<id>2</id>
+					<address>2855 dunbar dr</address>
+					<postalCode>92503</postalCode>
+					<city>
+						<id>1</id>
+						<name>riverside</name>
+						<country>
+							<id>1</id>
+							<name>united states</name>
+						</country>
+					</city>
+				</address>
+			</client>
+			<address>
+				<id>3</id>
+				<address>2943 lincoln ave</address>
+				<postalCode>92506</postalCode>
+				<city>
+					<id>1</id>
+					<name>riverside</name>
+					<country>
+						<id>1</id>
+						<name>united states</name>
+					</country>
+				</city>
+			</address>
+		</project>
 	</employee>
 
 	<employee>
 		<id>2</id>
-		<first_name>Jared</first_name>
-		<last_name>young</last_name>
-		<hire_date>2020-03-28</hire_date>
-		<phone_number>7078456134</phone_number>
-		<address_id>5</address_id>
-		<project_id>NULL</project_id>
+		<firstName>john</firstName>
+		<lastName>brown</lastName>
+		<hireDate>2023-02-07</hireDate>
+		<phoneNumber>7146241346</phoneNumber>
+		<address>
+			<id>5</id>
+			<address>785 jackson ave</address>
+			<postalCode>92503</postalCode>
+			<city>
+				<id>1</id>
+				<name>riverside</name>
+				<country>
+					<id>1</id>
+					<name>united states</name>
+				</country>
+			</city>
+		</address>
+		<project>
+			<id>1</id>
+			<name>office building</name>
+			<description>building with offices</description>
+			<cost>1000000</cost>
+			<client>
+				<id>2</id>
+				<name>commercial offices</name>
+				<phoneNumber>7048456794</phoneNumber>
+				<address>
+					<id>2</id>
+					<address>2855 dunbar dr</address>
+					<postalCode>92503</postalCode>
+					<city>
+						<id>1</id>
+						<name>riverside</name>
+						<country>
+							<id>1</id>
+							<name>united states</name>
+						</country>
+					</city>
+				</address>
+			</client>
+			<address>
+				<id>3</id>
+				<address>2943 lincoln ave</address>
+				<postalCode>92506</postalCode>
+				<city>
+					<id>1</id>
+					<name>riverside</name>
+					<country>
+						<id>1</id>
+						<name>united states</name>
+					</country>
+				</city>
+			</address>
+		</project>
 	</employee>
 
 	<employee>
 		<id>3</id>
-		<first_name>bryan</first_name>
-		<last_name>williams</last_name>
-		<hire_date>2021-06-11</hire_date>
-		<phone_number>9518462587</phone_number>
-		<address_id>6</address_id>
-		<project_id>NULL</project_id>
+		<firstName>alex</firstName>
+		<lastName>williamson</lastName>
+		<hireDate>2023-01-25</hireDate>
+		<phoneNumber>9092458525</phoneNumber>
+		<address>
+			<id>6</id>
+			<address>1548 california ave</address>
+			<postalCode>92504</postalCode>
+			<city>
+				<id>1</id>
+				<name>riverside</name>
+				<country>
+					<id>1</id>
+					<name>united states</name>
+				</country>
+			</city>
+		</address>
+		<project>
+			<id>1</id>
+			<name>office building</name>
+			<description>building with offices</description>
+			<cost>1000000</cost>
+			<client>
+				<id>2</id>
+				<name>commercial offices</name>
+				<phoneNumber>7048456794</phoneNumber>
+				<address>
+					<id>2</id>
+					<address>2855 dunbar dr</address>
+					<postalCode>92503</postalCode>
+					<city>
+						<id>1</id>
+						<name>riverside</name>
+						<country>
+							<id>1</id>
+							<name>united states</name>
+						</country>
+					</city>
+				</address>
+			</client>
+			<address>
+				<id>3</id>
+				<address>2943 lincoln ave</address>
+				<postalCode>92506</postalCode>
+				<city>
+					<id>1</id>
+					<name>riverside</name>
+					<country>
+						<id>1</id>
+						<name>united states</name>
+					</country>
+				</city>
+			</address>
+		</project>
 	</employee>
 </employees>

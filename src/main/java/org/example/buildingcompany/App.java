@@ -2,7 +2,7 @@ package org.example.buildingcompany;
 
 import org.example.buildingcompany.classes.City;
 import org.example.buildingcompany.service.impl.CityServiceImpl;
-import org.example.buildingcompany.service.interfaces.ICityService;
+import org.example.buildingcompany.service.ICityService;
 
 import java.sql.SQLException;
 import java.util.List;

@@ -1,8 +1,11 @@
 package org.example.buildingcompany.classes;
 
+import org.example.buildingcompany.xml.DateAdapter;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.sql.Date;
 @XmlRootElement(name="employee")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -10,6 +13,7 @@ public class Employee {
     private Long id;
     private String firstName;
     private String lastName;
+    @XmlJavaTypeAdapter(DateAdapter.class)
     private Date hireDate;
     private String phoneNumber;
     private Address address;

@@ -12,9 +12,9 @@ import java.io.IOException;
 
 public class XMLValidation {
     public static void main(String[] args) throws IOException, SAXException {
-        String addressesXML = "src\\main\\resources\\suppliers.xml";
-        String addressXSD = "src\\main\\resources\\supplier.xsd";
-        validateSchema(addressXSD, addressesXML);
+        String XML = "src\\main\\resources\\employees.xml";
+        String XSD = "src\\main\\resources\\employee.xsd";
+        validateSchema(XSD, XML);
 
     }
     public static void validateSchema(String xsdPath, String xmlPath) throws SAXException, IOException {

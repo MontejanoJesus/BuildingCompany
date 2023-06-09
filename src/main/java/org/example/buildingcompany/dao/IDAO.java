@@ -1,4 +1,4 @@
-package org.example.buildingcompany.dao.interfaces;
+package org.example.buildingcompany.dao;
 
 import java.sql.SQLException;
 import java.util.List;

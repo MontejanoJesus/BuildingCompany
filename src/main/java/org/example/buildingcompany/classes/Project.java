@@ -1,5 +1,11 @@
 package org.example.buildingcompany.classes;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "project")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Project {
     private Long id;
     private String name;

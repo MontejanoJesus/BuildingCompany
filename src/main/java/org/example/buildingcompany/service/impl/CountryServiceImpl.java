@@ -2,8 +2,8 @@ package org.example.buildingcompany.service.impl;
 
 import org.example.buildingcompany.classes.Country;
 import org.example.buildingcompany.dao.impl.CountryDAOImpl;
-import org.example.buildingcompany.dao.interfaces.ICountryDAO;
-import org.example.buildingcompany.service.interfaces.ICountryService;
+import org.example.buildingcompany.dao.ICountryDAO;
+import org.example.buildingcompany.service.ICountryService;
 
 import java.sql.SQLException;
 import java.util.List;
