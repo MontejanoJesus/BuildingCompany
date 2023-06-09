@@ -5,13 +5,13 @@
         <xs:element maxOccurs="unbounded" name="employee">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" type="xs:unsignedByte" />
+              <xs:element name="id" type="xs:long" />
               <xs:element name="first_name" type="xs:string" />
               <xs:element name="last_name" type="xs:string" />
               <xs:element name="hire_date" type="xs:date" />
-              <xs:element name="phone_number" type="xs:unsignedLong" />
-              <xs:element name="address_id" type="xs:unsignedByte" />
-              <xs:element name="project_id" type="xs:string" />
+              <xs:element name="phone_number" type="xs:string" />
+              <xs:element name="address_id" type="xs:long" />
+              <xs:element name="project_id" type="xs:long" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
