@@ -1,5 +1,6 @@
 package org.example.buildingcompany.classes;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.example.buildingcompany.xml.DateAdapter;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -14,6 +15,7 @@ public class Employee {
     private String firstName;
     private String lastName;
     @XmlJavaTypeAdapter(DateAdapter.class)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date hireDate;
     private String phoneNumber;
     private Address address;

@@ -1,0 +1,57 @@
+{
+  "id" : 1,
+  "firstName" : "jason",
+  "lastName" : "smith",
+  "hireDate" : "2023-05-31",
+  "phoneNumber" : "8189751234",
+  "address" : {
+    "id" : 1,
+    "address" : "1234 lost ave",
+    "postalCode" : "92503",
+    "city" : {
+      "id" : 1,
+      "name" : "riverside",
+      "country" : {
+        "id" : 1,
+        "name" : "united states"
+      }
+    }
+  },
+  "project" : {
+    "id" : 1,
+    "name" : "office building",
+    "description" : "building with offices",
+    "cost" : 1000000,
+    "client" : {
+      "id" : 2,
+      "name" : "commercial offices",
+      "phoneNumber" : "7048456794",
+      "address" : {
+        "id" : 2,
+        "address" : "2855 dunbar dr",
+        "postalCode" : "92503",
+        "city" : {
+          "id" : 1,
+          "name" : "riverside",
+          "country" : {
+            "id" : 1,
+            "name" : "united states"
+          }
+        }
+      }
+    },
+    "address" : {
+      "id" : 3,
+      "address" : "2943 lincoln ave",
+      "postalCode" : "92506",
+      "city" : {
+        "id" : 1,
+        "name" : "riverside",
+        "country" : {
+          "id" : 1,
+          "name" : "united states"
+        }
+      }
+    }
+  }
+}
