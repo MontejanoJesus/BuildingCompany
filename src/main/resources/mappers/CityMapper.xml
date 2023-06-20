@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.buildingcompany.mybatis.mappers.CityMapper">
+
+    <resultMap id="cityResultMap" type="org.example.buildingcompany.classes.City" autoMapping="false">
+        <id property="id" column="city_id"/>
+        <result property="name" column="city_name"/>
+        <association property="country" javaType="org.example.buildingcompany.classes.Country"
+                     resultMap="org.example.buildingcompany.mybatis.mappers.CountryMapper.countryResultMap"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="org.example.buildingcompany.classes.City">
+        insert into city (name, country_id)
+        values(#{name}, #{country_id});
+    </insert>
+
+    <select id="getById" resultType="org.example.buildingcompany.classes.City">
+        select C.id as city_id,
+        C.name as city_name,
+        CT.id as country_id,
+        CT.name as country_name
+        from city C join country CT on C.country_id = CT.id
+        where C.id = #{id};
+    </select>
+
+    <select id="getAll" resultType="org.example.buildingcompany.classes.City">
+        select * from city;
+    </select>
+    
+    <update id="update" parameterType="org.example.buildingcompany.classes.City">
+        update city set name = #{name}, country_id = #{country_id}
+        where id = #{id};
+    </update>
+
+    <delete id="deleteById" parameterType="org.example.buildingcompany.classes.City">
+        delete from city where id = #{id};
+    </delete>
+
+    
+</mapper>

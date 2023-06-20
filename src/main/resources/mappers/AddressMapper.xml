@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.buildingcompany.mybatis.mappers.AddressMapper">
+
+    <resultMap id="countryResultMap" type="org.example.buildingcompany.classes.Country">
+        <result property="id" column="address_id"/>
+        <result property="address" column="address"/>
+        <result property="postalCode" column="postal_code"/>
+        <association property="city" resultMap="org.example.buildingcompany.mybatis.mappers.CityMapper.cityResultMap"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="org.example.buildingcompany.classes.Address">
+        insert into address (address, postal_code, city_id)
+        values(#{address}, #{postal_code}, #{city_id});
+    </insert>
+
+    <select id="getById" resultType="org.example.buildingcompany.classes.Address">
+        select A.id as address_id,
+        A.address as address,
+        A.postal_code,
+        C.id as city_id,
+        C.name as city_name,
+        CT.id as country_id,
+        CT.name as country_name
+        from address A join city C join country CT on A.city_id = C.id
+        where A.id = #{id};
+    </select>
+
+    <select id="getAll" resultType="org.example.buildingcompany.classes.Address">
+        select * from address;
+    </select>
+
+    <update id="update" parameterType="org.example.buildingcompany.classes.Address">
+        update address set address = #{address}, postal_code = #{postal_code}, city_id = #{city_id}
+        where id = #{id};
+    </update>
+
+    <delete id="deleteById" parameterType="org.example.buildingcompany.classes.Address">
+        delete from address where id = #{id};
+    </delete>
+
+
+</mapper>

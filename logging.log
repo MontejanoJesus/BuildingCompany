@@ -1,0 +1,5 @@
+2023-06-19 08:22:43,330 INFO o.e.b.m.MyBatisRunner [main] null
+2023-06-19 08:24:39,557 INFO o.e.b.m.MyBatisRunner [main] Country{id=1, name='united states'}
+2023-06-19 08:25:03,081 INFO o.e.b.m.MyBatisRunner [main] null
+2023-06-19 08:51:15,768 INFO o.e.b.m.MyBatisRunner [main] null
+2023-06-19 08:54:00,344 INFO o.e.b.m.MyBatisRunner [main] null
