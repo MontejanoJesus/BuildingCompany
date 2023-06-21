@@ -52,7 +52,7 @@ public class Supplier {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", address=" + address +
+                ", address=" + address.getAddress() +
                 '}';
     }
 }

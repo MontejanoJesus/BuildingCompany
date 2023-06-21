@@ -3,13 +3,13 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.example.buildingcompany.mybatis.mappers.AddressMapper">
+<mapper namespace="org.example.buildingcompany.dao.IAddressDAO">
 
-    <resultMap id="countryResultMap" type="org.example.buildingcompany.classes.Country">
+    <resultMap id="addressResultMap" type="org.example.buildingcompany.classes.Address">
         <result property="id" column="address_id"/>
         <result property="address" column="address"/>
         <result property="postalCode" column="postal_code"/>
-        <association property="city" resultMap="org.example.buildingcompany.mybatis.mappers.CityMapper.cityResultMap"/>
+        <association property="city" resultMap="org.example.buildingcompany.dao.ICityDAO.cityResultMap"/>
     </resultMap>
 
     <insert id="insert" parameterType="org.example.buildingcompany.classes.Address">
@@ -17,7 +17,7 @@
         values(#{address}, #{postal_code}, #{city_id});
     </insert>
 
-    <select id="getById" resultType="org.example.buildingcompany.classes.Address">
+    <select id="findById" resultMap="org.example.buildingcompany.dao.IAddressDAO.addressResultMap">
         select A.id as address_id,
         A.address as address,
         A.postal_code,
@@ -29,8 +29,24 @@
         where A.id = #{id};
     </select>
 
-    <select id="getAll" resultType="org.example.buildingcompany.classes.Address">
+    <select id="findAll" resultType="org.example.buildingcompany.classes.Address">
         select * from address;
+    </select>
+
+    <select id="getAddressBySupplierId" resultType="org.example.buildingcompany.classes.Address">
+        select * from address where id = (select address_id from suppliers where id = #{id});
+    </select>
+
+    <select id="getAddressByEmployeeId" resultType="org.example.buildingcompany.classes.Address">
+        select * from address where id = (select address_id from employees where id = #{id});
+    </select>
+
+    <select id="getAddressByClientId" resultType="org.example.buildingcompany.classes.Address">
+        select * from address where id = (select address_id from clients where id = #{id});
+    </select>
+
+    <select id="getAddressByProjectId" resultType="org.example.buildingcompany.classes.Address">
+        select * from address where id = (select address_id from projects where id = #{id});
     </select>
 
     <update id="update" parameterType="org.example.buildingcompany.classes.Address">

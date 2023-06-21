@@ -1,21 +1,21 @@
 package org.example.buildingcompany.service.impl;
 
 import org.example.buildingcompany.classes.Project;
-import org.example.buildingcompany.dao.impl.AddressDAOImpl;
-import org.example.buildingcompany.dao.impl.ClientDAOImpl;
-import org.example.buildingcompany.dao.impl.ProjectDAOImpl;
 import org.example.buildingcompany.dao.IAddressDAO;
 import org.example.buildingcompany.dao.IClientDAO;
 import org.example.buildingcompany.dao.IProjectDAO;
+import org.example.buildingcompany.mybatis.daoimpl.AddressMyBatis;
+import org.example.buildingcompany.mybatis.daoimpl.ClientMyBatis;
+import org.example.buildingcompany.mybatis.daoimpl.ProjectMyBatis;
 import org.example.buildingcompany.service.IProjectService;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class ProjectService implements IProjectService {
-    private IProjectDAO projectDAO = new ProjectDAOImpl();
-    private IClientDAO clientDAO = new ClientDAOImpl();
-    private IAddressDAO addressDAO = new AddressDAOImpl();
+    private IProjectDAO projectDAO = new ProjectMyBatis();
+    private IClientDAO clientDAO = new ClientMyBatis();
+    private IAddressDAO addressDAO = new AddressMyBatis();
     @Override
     public void insert(Project project) throws SQLException, InterruptedException {
         projectDAO.insert(project);

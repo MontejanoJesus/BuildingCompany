@@ -3,3 +3,14 @@
 2023-06-19 08:25:03,081 INFO o.e.b.m.MyBatisRunner [main] null
 2023-06-19 08:51:15,768 INFO o.e.b.m.MyBatisRunner [main] null
 2023-06-19 08:54:00,344 INFO o.e.b.m.MyBatisRunner [main] null
+2023-06-20 08:34:37,087 INFO o.e.b.m.MyBatisRunner [main] City{id=1, name='los angeles', country=united states}
+2023-06-20 08:37:14,916 INFO o.e.b.m.MyBatisRunner [main] Address{id=1, address='1111 s figueroa st', postalCode='90015', city= los angeles}
+2023-06-20 14:27:04,831 INFO o.e.b.m.MyBatisRunner [main] Equipment{id=1, name='crane', description='100 ft lifting crane', quantity=1, cost=250000, supplier=supreme concrete}
+2023-06-20 14:34:16,605 INFO o.e.b.m.MyBatisRunner [main] null
+2023-06-20 14:35:01,713 INFO o.e.b.m.MyBatisRunner [main] Client{id=2, name='target', phoneNumber='8004561379', address=1111 s figueroa st}
+2023-06-20 14:40:47,721 INFO o.e.b.m.MyBatisRunner [main] Material{id=2, name='concrete', description='90 lbs quickmix concrete', quantity=10, cost=15, supplier=supreme concrete}
+2023-06-20 15:04:44,320 INFO o.e.b.m.MyBatisRunner [main] Project{id=1, name='empire state', description='remodeling empire state', cost=800000, client=target, address=1111 s figueroa st}
+2023-06-21 14:09:46,228 INFO o.e.b.m.MyBatisRunner [main] [Country{id=1, name='united states'}, Country{id=3, name='Canada'}]
+2023-06-21 14:10:58,918 INFO o.e.b.m.MyBatisRunner [main] [Country{id=1, name='united states'}, Country{id=3, name='Canada'}]
+
+2023-06-21 14:10:58,921 INFO o.e.b.m.MyBatisRunner [main] Country{id=3, name='Canada'}

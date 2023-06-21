@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.buildingcompany.dao.IEmployeeDAO">
+
+    <resultMap id="employeeResultMap" type="org.example.buildingcompany.classes.Employee">
+        <result property="id" column="employee_id"/>
+        <result property="firstName" column="first_name"/>
+        <result property="lastName" column="last_name"/>
+        <result property="hireDate" column="hire_date"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <association property="address" javaType="org.example.buildingcompany.classes.Address"
+                     resultMap="org.example.buildingcompany.dao.IAddressDAO.addressResultMap"/>
+        <association property="project" javaType="org.example.buildingcompany.classes.Project"
+                     resultMap="org.example.buildingcompany.dao.IProjectDAO.projectResultMap"/>
+    </resultMap>
+
+    <select id="findById" resultMap="org.example.buildingcompany.dao.IEmployeeDAO.employeeResultMap">
+        select * from employees where id = #{id}
+    </select>
+
+    <select id="findAll" resultType="org.example.buildingcompany.classes.Employee">
+        select * from employees;
+    </select>
+
+    <insert id="insert" parameterType="org.example.buildingcompany.classes.Employee">
+        insert into employees (first_name, last_name, hire_date, phone_number, address_id, project_id)
+        values (#{firstName}, #{lastName}, #{hireDate}, #{phoneNumber}, #{addressId}, #{projectId});
+    </insert>
+
+    <update id="update" parameterType="org.example.buildingcompany.classes.Employee">
+        update employees set first_name = #{firstName}, last_name = #{lastName}, hire_date = #{hireDate},
+                    phone_number = #{phoneNumber}, address_id = #{addressId}, project_id = #{projectId}
+        where id = #{id};
+    </update>
+
+    <delete id="delete" parameterType="org.example.buildingcompany.classes.Employee">
+        delete from employees where id = #{id};
+    </delete>
+</mapper>

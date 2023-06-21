@@ -1,18 +1,18 @@
 package org.example.buildingcompany.service.impl;
 
 import org.example.buildingcompany.classes.Equipment;
-import org.example.buildingcompany.dao.impl.EquipmentDAOImpl;
-import org.example.buildingcompany.dao.impl.SupplierDAOImpl;
 import org.example.buildingcompany.dao.IEquipmentDAO;
 import org.example.buildingcompany.dao.ISupplierDAO;
+import org.example.buildingcompany.mybatis.daoimpl.EquipmentMyBatis;
+import org.example.buildingcompany.mybatis.daoimpl.SupplierMyBatis;
 import org.example.buildingcompany.service.IEquipmentService;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class EquipmentService implements IEquipmentService {
-    private IEquipmentDAO equipmentDAO = new EquipmentDAOImpl();
-    private ISupplierDAO supplierDAO = new SupplierDAOImpl();
+    private IEquipmentDAO equipmentDAO = new EquipmentMyBatis();
+    private ISupplierDAO supplierDAO = new SupplierMyBatis();
     @Override
     public void insert(Equipment equipment) throws SQLException, InterruptedException {
         equipmentDAO.insert(equipment);

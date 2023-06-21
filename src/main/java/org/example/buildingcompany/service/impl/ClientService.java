@@ -1,18 +1,18 @@
 package org.example.buildingcompany.service.impl;
 
 import org.example.buildingcompany.classes.Client;
-import org.example.buildingcompany.dao.impl.AddressDAOImpl;
-import org.example.buildingcompany.dao.impl.ClientDAOImpl;
 import org.example.buildingcompany.dao.IAddressDAO;
 import org.example.buildingcompany.dao.IClientDAO;
+import org.example.buildingcompany.mybatis.daoimpl.AddressMyBatis;
+import org.example.buildingcompany.mybatis.daoimpl.ClientMyBatis;
 import org.example.buildingcompany.service.IClientService;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class ClientService implements IClientService {
-    private IClientDAO clientDAO = new ClientDAOImpl();
-    private IAddressDAO addressDAO = new AddressDAOImpl();
+    private IClientDAO clientDAO = new ClientMyBatis();
+    private IAddressDAO addressDAO = new AddressMyBatis();
     @Override
     public void insert(Client client) throws SQLException, InterruptedException {
         clientDAO.insert(client);

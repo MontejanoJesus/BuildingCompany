@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.example.buildingcompany.mybatis.mappers.CountryMapper">
+<mapper namespace="org.example.buildingcompany.dao.ICountryDAO">
 
     <resultMap id="countryResultMap" type="org.example.buildingcompany.classes.Country">
         <result property="id" column="country_id"/>
@@ -15,11 +15,11 @@
         values(#{name});
     </insert>
 
-    <select id="getById" resultType="org.example.buildingcompany.classes.Country">
+    <select id="findById" resultType="org.example.buildingcompany.classes.Country">
         select * from country where id = #{id}
     </select>
 
-    <select id="getAll" resultType="org.example.buildingcompany.classes.Country">
+    <select id="findAll" resultType="org.example.buildingcompany.classes.Country">
         select * from country;
     </select>
 

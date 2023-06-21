@@ -1,18 +1,18 @@
 package org.example.buildingcompany.service.impl;
 
 import org.example.buildingcompany.classes.Supplier;
-import org.example.buildingcompany.dao.impl.AddressDAOImpl;
-import org.example.buildingcompany.dao.impl.SupplierDAOImpl;
 import org.example.buildingcompany.dao.IAddressDAO;
 import org.example.buildingcompany.dao.ISupplierDAO;
+import org.example.buildingcompany.mybatis.daoimpl.AddressMyBatis;
+import org.example.buildingcompany.mybatis.daoimpl.SupplierMyBatis;
 import org.example.buildingcompany.service.ISupplierService;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class SupplierServiceImpl implements ISupplierService {
-    private ISupplierDAO supplierDAO = new SupplierDAOImpl();
-    private IAddressDAO addressDAO = new AddressDAOImpl();
+    private ISupplierDAO supplierDAO = new SupplierMyBatis();
+    private IAddressDAO addressDAO = new AddressMyBatis();
     @Override
     public void insert(Supplier supplier) throws SQLException, InterruptedException {
         supplierDAO.insert(supplier);

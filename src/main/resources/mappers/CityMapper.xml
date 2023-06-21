@@ -2,13 +2,13 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.example.buildingcompany.mybatis.mappers.CityMapper">
+<mapper namespace="org.example.buildingcompany.dao.ICityDAO">
 
     <resultMap id="cityResultMap" type="org.example.buildingcompany.classes.City" autoMapping="false">
         <id property="id" column="city_id"/>
         <result property="name" column="city_name"/>
         <association property="country" javaType="org.example.buildingcompany.classes.Country"
-                     resultMap="org.example.buildingcompany.mybatis.mappers.CountryMapper.countryResultMap"/>
+                     resultMap="org.example.buildingcompany.dao.ICountryDAO.countryResultMap"/>
     </resultMap>
 
     <insert id="insert" parameterType="org.example.buildingcompany.classes.City">
@@ -16,7 +16,7 @@
         values(#{name}, #{country_id});
     </insert>
 
-    <select id="getById" resultType="org.example.buildingcompany.classes.City">
+    <select id="findById" resultMap="org.example.buildingcompany.dao.ICityDAO.cityResultMap">
         select C.id as city_id,
         C.name as city_name,
         CT.id as country_id,
@@ -25,8 +25,13 @@
         where C.id = #{id};
     </select>
 
-    <select id="getAll" resultType="org.example.buildingcompany.classes.City">
+    <select id="findAll" resultType="org.example.buildingcompany.classes.City">
         select * from city;
+    </select>
+
+    <select id="getCityByAddressId" resultType="org.example.buildingcompany.classes.City">
+        SELECT * FROM city WHERE
+        id = (SELECT city_id FROM address WHERE id = #{id})
     </select>
     
     <update id="update" parameterType="org.example.buildingcompany.classes.City">

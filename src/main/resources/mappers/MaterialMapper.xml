@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.buildingcompany.dao.IMaterialDAO">
+
+    <resultMap id="materialResultMap" type="org.example.buildingcompany.classes.Material">
+        <result property="id" column="material_id"/>
+        <result property="name" column="material_name"/>
+        <result property="description" column="description"/>
+        <result property="quantity" column="quantity"/>
+        <result property="cost" column="cost"/>
+        <association property="supplier" javaType="org.example.buildingcompany.classes.Supplier"
+                     resultMap="org.example.buildingcompany.dao.ISupplierDAO.supplierResultMap"/>
+    </resultMap>
+
+    <select id="findById" resultMap="org.example.buildingcompany.dao.IMaterialDAO.materialResultMap">
+        select M.id as material_id,
+        M.name as material_name,
+        description,
+        quantity,
+        cost,
+        S.id as suppliers_id,
+        S.name as suppliers_name
+        from materials M join suppliers S on M.suppliers_id = S.id
+        where M.id = #{id};
+    </select>
+
+    <insert id="insert" parameterType="org.example.buildingcompany.classes.Material">
+        insert into materials (name, description, quantity, cost, supplier_id)
+        values(#{name}, #{description}, #{quantity}, #{cost}, #{supplier_id});
+    </insert>
+
+    <select id="findAll" resultType="org.example.buildingcompany.classes.Material">
+        select * from materials;
+    </select>
+
+    <update id="update" parameterType="org.example.buildingcompany.classes.Material">
+        update materials set name = #{name}, description = #{description}, quantity = #{quantity},
+        cost = #{cost}, supplier_id = #{supplier_id}
+        where id = #{id};
+    </update>
+
+    <delete id="deleteById" parameterType="org.example.buildingcompany.classes.Material">
+        delete from materials where id = #{id};
+    </delete>
+</mapper>

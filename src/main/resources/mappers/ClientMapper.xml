@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.buildingcompany.dao.IClientDAO">
+
+    <resultMap id="clientResultMap" type="org.example.buildingcompany.classes.Client">
+        <result property="id" column="clients_id"/>
+        <result property="name" column="clients_name"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <association property="address" javaType="org.example.buildingcompany.classes.Address"
+                     resultMap="org.example.buildingcompany.dao.IAddressDAO.addressResultMap"/>
+    </resultMap>
+
+    <select id="findById" resultMap="org.example.buildingcompany.dao.IClientDAO.clientResultMap">
+        select C.id as clients_id,
+        C.name as clients_name,
+        phone_number,
+        A.id as address_id,
+        A.address as address
+        from clients C join address A on C.address_id = A.id
+        where C.id = #{id};
+    </select>
+
+    <insert id="insert" parameterType="org.example.buildingcompany.classes.Client">
+        insert into clients (name, phone_number, address_id)
+        values(#{name}, #{phone_number}, #{address_id});
+    </insert>
+
+    <select id="findAll" resultType="org.example.buildingcompany.classes.Client">
+        select * from clients;
+    </select>
+
+    <select id="getClientByProjectId" resultType="org.example.buildingcompany.classes.Client">
+        select * from clients where id = (select clients_id from projects where id = #{id});
+    </select>
+
+    <update id="update" parameterType="org.example.buildingcompany.classes.Client">
+        update clients set name = #{name}, phone_number = #{phone_number}, address_id = #{address_id}
+        where id = #{id};
+    </update>
+
+    <delete id="deleteById" parameterType="org.example.buildingcompany.classes.Client">
+        delete from clients where id = #{id};
+    </delete>
+
+
+</mapper>

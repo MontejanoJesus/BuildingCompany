@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.buildingcompany.dao.ISupplierDAO">
+
+    <resultMap id="supplierResultMap" type="org.example.buildingcompany.classes.Supplier">
+        <result property="id" column="suppliers_id"/>
+        <result property="name" column="suppliers_name"/>
+        <result property="phoneNumber" column="phone_number"/>
+        <association property="address" javaType="org.example.buildingcompany.classes.Address"
+                     resultMap="org.example.buildingcompany.dao.IAddressDAO.addressResultMap"/>
+    </resultMap>
+
+    <select id="findById" resultMap="org.example.buildingcompany.dao.ISupplierDAO.supplierResultMap">
+        select S.id as suppliers_id,
+        S.name as suppliers_name,
+        phone_number,
+        A.id as address_id,
+        A.address as address
+        from suppliers S join address A on S.address_id = A.id
+        where S.id = #{id};
+    </select>
+
+    <insert id="insert" parameterType="org.example.buildingcompany.classes.Equipment">
+        insert into suppliers (name, phone_number, address_id)
+        values(#{name}, #{phone_number}, #{address_id});
+    </insert>
+
+    <select id="findAll" resultType="org.example.buildingcompany.classes.Supplier">
+        select * from suppliers;
+    </select>
+
+    <select id="getSupplierByMaterialId" resultType="org.example.buildingcompany.classes.Supplier">
+        select * from suppliers where id = (select suppliers_id from materials where id = #{id});
+    </select>
+
+    <select id="getSupplierByEquipmentId" resultType="org.example.buildingcompany.classes.Supplier">
+        select * from suppliers where id = (select suppliers_id from equipment where id = #{id});
+    </select>
+
+    <update id="update" parameterType="org.example.buildingcompany.classes.Supplier">
+        update suppliers set name = #{name}, phone_number = #{phone_number}, address_id = #{address_id}
+        where id = #{id};
+    </update>
+
+    <delete id="deleteById" parameterType="org.example.buildingcompany.classes.Supplier">
+        delete from suppliers where id = #{id};
+    </delete>
+</mapper>

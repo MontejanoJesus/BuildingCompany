@@ -20,5 +20,11 @@
         <mapper resource="mappers/CityMapper.xml"/>
         <mapper resource="mappers/CountryMapper.xml"/>
         <mapper resource="mappers/AddressMapper.xml"/>
+        <mapper resource="mappers/EquipmentMapper.xml"/>
+        <mapper resource="mappers/SupplierMapper.xml"/>
+        <mapper resource="mappers/ClientMapper.xml"/>
+        <mapper resource="mappers/MaterialMapper.xml"/>
+        <mapper resource="mappers/ProjectMapper.xml"/>
+        <mapper resource="mappers/EmployeeMapper.xml"/>
     </mappers>
 </configuration>

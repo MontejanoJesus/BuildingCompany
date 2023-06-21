@@ -12,6 +12,10 @@ public class Country {
 
     public Country(){}
 
+    public Country(String name) {
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }

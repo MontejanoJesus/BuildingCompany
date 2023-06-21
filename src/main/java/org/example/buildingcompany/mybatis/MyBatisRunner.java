@@ -1,26 +1,24 @@
 package org.example.buildingcompany.mybatis;
 
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.buildingcompany.classes.City;
+import org.example.buildingcompany.classes.Country;
+import org.example.buildingcompany.service.ICountryService;
+import org.example.buildingcompany.service.impl.CountryServiceImpl;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.sql.SQLException;
+import java.util.List;
 
 public class MyBatisRunner {
     private final static Logger logger = LogManager.getLogger(MyBatisRunner.class);
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws SQLException, InterruptedException {
+        // Service using MyBatis
+        ICountryService countryDAO = new CountryServiceImpl();
 
-        try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
-            SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)) {
+        List<Country> countries = countryDAO.getAll();
+        Country country = countryDAO.getById(3L);
 
-            City city = session.selectOne("org.example.buildingcompany.mybatis.mappers.CityMapper.getById", 1);
-
-            logger.info(city);
-
-        }
+        logger.info(countries + "\n");
+        logger.info(country);
     }
 }

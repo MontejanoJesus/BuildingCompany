@@ -1,18 +1,18 @@
 package org.example.buildingcompany.service.impl;
 
 import org.example.buildingcompany.classes.Address;
-import org.example.buildingcompany.dao.impl.AddressDAOImpl;
-import org.example.buildingcompany.dao.impl.CityDAOImpl;
 import org.example.buildingcompany.dao.IAddressDAO;
 import org.example.buildingcompany.dao.ICityDAO;
+import org.example.buildingcompany.mybatis.daoimpl.AddressMyBatis;
+import org.example.buildingcompany.mybatis.daoimpl.CityMyBatis;
 import org.example.buildingcompany.service.IAddressService;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class AddressServiceImpl implements IAddressService {
-    private IAddressDAO addressDAO = new AddressDAOImpl();
-    private ICityDAO cityDAO = new CityDAOImpl();
+    private IAddressDAO addressDAO = new AddressMyBatis();
+    private ICityDAO cityDAO = new CityMyBatis();
 
     @Override
     public void insert(Address address) throws SQLException, InterruptedException {

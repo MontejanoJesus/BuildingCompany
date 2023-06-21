@@ -1,18 +1,18 @@
 package org.example.buildingcompany.service.impl;
 
 import org.example.buildingcompany.classes.Material;
-import org.example.buildingcompany.dao.impl.MaterialDAOImpl;
-import org.example.buildingcompany.dao.impl.SupplierDAOImpl;
 import org.example.buildingcompany.dao.IMaterialDAO;
 import org.example.buildingcompany.dao.ISupplierDAO;
+import org.example.buildingcompany.mybatis.daoimpl.MaterialMyBatis;
+import org.example.buildingcompany.mybatis.daoimpl.SupplierMyBatis;
 import org.example.buildingcompany.service.IMaterialService;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class MaterialService implements IMaterialService {
-    private IMaterialDAO materialDAO = new MaterialDAOImpl();
-    private ISupplierDAO supplierDAO = new SupplierDAOImpl();
+    private IMaterialDAO materialDAO = new MaterialMyBatis();
+    private ISupplierDAO supplierDAO = new SupplierMyBatis();
     @Override
     public void insert(Material material) throws SQLException, InterruptedException {
         materialDAO.insert(material);

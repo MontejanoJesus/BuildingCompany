@@ -1,20 +1,20 @@
 package org.example.buildingcompany.service.impl;
 
 import org.example.buildingcompany.classes.City;
-import org.example.buildingcompany.dao.impl.CityDAOImpl;
-import org.example.buildingcompany.dao.impl.CountryDAOImpl;
 import org.example.buildingcompany.dao.ICityDAO;
 import org.example.buildingcompany.dao.ICountryDAO;
+import org.example.buildingcompany.mybatis.daoimpl.CityMyBatis;
+import org.example.buildingcompany.mybatis.daoimpl.CountryMyBatis;
 import org.example.buildingcompany.service.ICityService;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class CityServiceImpl implements ICityService {
-    private ICityDAO cityDAO = new CityDAOImpl();
-    private ICountryDAO countryDAO = new CountryDAOImpl();
+    private ICityDAO cityDAO = new CityMyBatis();
+    private ICountryDAO countryDAO = new CountryMyBatis();
     @Override
-    public void insert(City city) throws SQLException, InterruptedException {
+    public void insert(City city) throws SQLException, InterruptedException{
         cityDAO.insert(city);
     }
 

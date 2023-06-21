@@ -1,15 +1,15 @@
 package org.example.buildingcompany.service.impl;
 
 import org.example.buildingcompany.classes.Country;
-import org.example.buildingcompany.dao.impl.CountryDAOImpl;
 import org.example.buildingcompany.dao.ICountryDAO;
+import org.example.buildingcompany.mybatis.daoimpl.CountryMyBatis;
 import org.example.buildingcompany.service.ICountryService;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class CountryServiceImpl implements ICountryService {
-    private ICountryDAO countryDAO = new CountryDAOImpl();
+    private ICountryDAO countryDAO = new CountryMyBatis();
     @Override
     public void insert(Country country) throws SQLException, InterruptedException {
         countryDAO.insert(country);
