@@ -1,4 +1,4 @@
-package org.example.buildingcompany.dao.impl;
+package org.example.buildingcompany.dao.jdbcimpl;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -4,9 +4,9 @@ import org.example.buildingcompany.classes.Employee;
 import org.example.buildingcompany.dao.IAddressDAO;
 import org.example.buildingcompany.dao.IEmployeeDAO;
 import org.example.buildingcompany.dao.IProjectDAO;
-import org.example.buildingcompany.mybatis.daoimpl.AddressMyBatis;
-import org.example.buildingcompany.mybatis.daoimpl.EmployeeMyBatis;
-import org.example.buildingcompany.mybatis.daoimpl.ProjectMyBatis;
+import org.example.buildingcompany.dao.mybatisimpl.AddressMyBatis;
+import org.example.buildingcompany.dao.mybatisimpl.EmployeeMyBatis;
+import org.example.buildingcompany.dao.mybatisimpl.ProjectMyBatis;
 import org.example.buildingcompany.service.IEmployeeService;
 
 import java.sql.SQLException;

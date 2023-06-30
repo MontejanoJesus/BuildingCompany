@@ -14,3 +14,33 @@
 2023-06-21 14:10:58,918 INFO o.e.b.m.MyBatisRunner [main] [Country{id=1, name='united states'}, Country{id=3, name='Canada'}]
 
 2023-06-21 14:10:58,921 INFO o.e.b.m.MyBatisRunner [main] Country{id=3, name='Canada'}
+2023-06-29 14:42:27,830 INFO o.e.b.d.o.Observer1 [main] Recieved an update. New state is: 10
+2023-06-29 14:42:27,833 INFO o.e.b.d.o.Observer2 [main] Recieved an update: New state is: 10
+2023-06-29 14:42:27,833 INFO o.e.b.d.o.Observer2 [main] Recieved an update: New state is: 15
+2023-06-29 14:42:56,376 INFO o.e.b.d.o.Observer1 [main] Recieved an update. New state is: 10
+
+2023-06-29 14:42:56,380 INFO o.e.b.d.o.Observer2 [main] Recieved an update: New state is: 10
+
+2023-06-29 14:42:56,380 INFO o.e.b.d.o.Observer2 [main] Recieved an update: New state is: 15
+
+2023-06-29 14:43:53,806 INFO o.e.b.d.o.Observer1 [main] Observer1 received an update. New state is: 10
+
+2023-06-29 14:43:53,809 INFO o.e.b.d.o.Observer2 [main] Observer2 received an update: New state is: 10
+
+2023-06-29 14:43:53,810 INFO o.e.b.d.o.Observer2 [main] Observer2 received an update: New state is: 15
+
+2023-06-30 08:04:51,717 INFO o.e.b.d.f.ComputerFacade [main] Computer is starting
+2023-06-30 08:04:51,719 INFO o.e.b.d.f.CPU [main] CPU is executing
+2023-06-30 08:04:51,719 INFO o.e.b.d.f.Memory [main] Data is being loaded
+2023-06-30 08:04:51,719 INFO o.e.b.d.f.HardDrive [main] Data being read from hard-drive.
+2023-06-30 08:04:51,719 INFO o.e.b.d.f.ComputerFacade [main] Computer is shutting down.
+2023-06-30 08:05:41,317 INFO o.e.b.d.f.ComputerFacade [main] Computer is starting
+
+2023-06-30 08:05:41,320 INFO o.e.b.d.f.CPU [main] CPU is executing
+
+2023-06-30 08:05:41,320 INFO o.e.b.d.f.Memory [main] Data is being loaded
+
+2023-06-30 08:05:41,320 INFO o.e.b.d.f.HardDrive [main] Data being read from hard-drive.
+
+2023-06-30 08:05:41,320 INFO o.e.b.d.f.ComputerFacade [main] Computer is shutting down.
+

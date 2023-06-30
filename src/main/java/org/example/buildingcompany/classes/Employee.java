@@ -1,6 +1,7 @@
 package org.example.buildingcompany.classes;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.example.buildingcompany.designpatterns.EmployeeBuilder;
 import org.example.buildingcompany.xml.DateAdapter;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -30,6 +31,14 @@ public class Employee {
         this.phoneNumber = phoneNumber;
         this.address = address;
         this.project = project;
+    }
+    public Employee(EmployeeBuilder builder) {
+        this.firstName = builder.getFirstName();
+        this.lastName = builder.getLastName();
+        this.hireDate = builder.getHireDate();
+        this.address = builder.getAddress();
+        this.project = builder.getProject();
+        this.phoneNumber = builder.getPhoneNumber();
     }
 
     public Long getId() {

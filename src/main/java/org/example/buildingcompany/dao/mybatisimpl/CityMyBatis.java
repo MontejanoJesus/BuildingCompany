@@ -1,25 +1,25 @@
-package org.example.buildingcompany.mybatis.daoimpl;
+package org.example.buildingcompany.dao.mybatisimpl;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.buildingcompany.classes.Client;
-import org.example.buildingcompany.dao.IClientDAO;
+import org.example.buildingcompany.classes.City;
+import org.example.buildingcompany.dao.ICityDAO;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.List;
 
-public class ClientMyBatis implements IClientDAO {
-    private final static Logger logger = LogManager.getLogger(ClientMyBatis.class);
+public class CityMyBatis implements ICityDAO {
+    private final static Logger logger = LogManager.getLogger(CityMyBatis.class);
     @Override
-    public Client getClientByProjectId(Long id) throws SQLException, InterruptedException {
+    public City getCityByAddressId(Long id) throws SQLException, InterruptedException {
         try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
             SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)){
-            return session.getMapper(IClientDAO.class).getClientByProjectId(id);
+            return session.getMapper(ICityDAO.class).getCityByAddressId(id);
 
         } catch (IOException e) {
             logger.error(e);
@@ -28,21 +28,22 @@ public class ClientMyBatis implements IClientDAO {
     }
 
     @Override
-    public void insert(Client client) throws SQLException, InterruptedException {
+    public void insert(City city) throws SQLException, InterruptedException {
         try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
             SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)){
-            session.getMapper(IClientDAO.class).insert(client);
+            session.getMapper(ICityDAO.class).insert(city);
 
         } catch (IOException e) {
             logger.error(e);
         }
+
     }
 
     @Override
-    public List<Client> findAll() throws SQLException, InterruptedException {
+    public List<City> findAll() throws SQLException, InterruptedException {
         try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
             SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)){
-            return session.getMapper(IClientDAO.class).findAll();
+            return session.getMapper(ICityDAO.class).findAll();
 
         } catch (IOException e) {
             logger.error(e);
@@ -51,10 +52,10 @@ public class ClientMyBatis implements IClientDAO {
     }
 
     @Override
-    public Client findById(Long id) throws SQLException, InterruptedException {
+    public City findById(Long id) throws SQLException, InterruptedException {
         try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
             SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)){
-            return session.getMapper(IClientDAO.class).findById(id);
+            return session.getMapper(ICityDAO.class).findById(id);
 
         } catch (IOException e) {
             logger.error(e);
@@ -63,24 +64,26 @@ public class ClientMyBatis implements IClientDAO {
     }
 
     @Override
-    public void update(Client client, Long id) throws SQLException, InterruptedException {
+    public void update(City city, Long id) throws SQLException, InterruptedException {
         try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
             SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)){
-            session.getMapper(IClientDAO.class).update(client, id);
+            session.getMapper(ICityDAO.class).update(city, id);
 
         } catch (IOException e) {
             logger.error(e);
         }
+
     }
 
     @Override
     public void delete(Long id) throws SQLException, InterruptedException {
         try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
             SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)){
-            session.getMapper(IClientDAO.class).delete(id);
+            session.getMapper(ICityDAO.class).delete(id);
 
         } catch (IOException e) {
             logger.error(e);
         }
+
     }
 }

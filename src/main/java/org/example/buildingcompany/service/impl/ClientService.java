@@ -3,8 +3,8 @@ package org.example.buildingcompany.service.impl;
 import org.example.buildingcompany.classes.Client;
 import org.example.buildingcompany.dao.IAddressDAO;
 import org.example.buildingcompany.dao.IClientDAO;
-import org.example.buildingcompany.mybatis.daoimpl.AddressMyBatis;
-import org.example.buildingcompany.mybatis.daoimpl.ClientMyBatis;
+import org.example.buildingcompany.dao.mybatisimpl.AddressMyBatis;
+import org.example.buildingcompany.dao.mybatisimpl.ClientMyBatis;
 import org.example.buildingcompany.service.IClientService;
 
 import java.sql.SQLException;

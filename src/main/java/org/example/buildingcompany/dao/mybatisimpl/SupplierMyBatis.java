@@ -1,25 +1,25 @@
-package org.example.buildingcompany.mybatis.daoimpl;
+package org.example.buildingcompany.dao.mybatisimpl;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.buildingcompany.classes.Project;
-import org.example.buildingcompany.dao.IProjectDAO;
+import org.example.buildingcompany.classes.Supplier;
+import org.example.buildingcompany.dao.ISupplierDAO;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.List;
 
-public class ProjectMyBatis implements IProjectDAO {
-    private final static Logger logger = LogManager.getLogger(ProjectMyBatis.class);
+public class SupplierMyBatis implements ISupplierDAO {
+    private final static Logger logger = LogManager.getLogger(SupplierMyBatis.class);
     @Override
-    public void insert(Project project) throws SQLException, InterruptedException {
+    public void insert(Supplier supplier) throws SQLException, InterruptedException {
         try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
             SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)){
-            session.getMapper(IProjectDAO.class).insert(project);
+            session.getMapper(ISupplierDAO.class).insert(supplier);
 
         } catch (IOException e) {
             logger.error(e);
@@ -28,22 +28,10 @@ public class ProjectMyBatis implements IProjectDAO {
     }
 
     @Override
-    public List<Project> findAll() throws SQLException, InterruptedException {
+    public List<Supplier> findAll() throws SQLException, InterruptedException {
         try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
             SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)){
-            return session.getMapper(IProjectDAO.class).findAll();
-
-        } catch (IOException e) {
-            logger.error(e);
-        }
-        return null;
-    }
-
-    @Override
-    public Project findById(Long id) throws SQLException, InterruptedException {
-        try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
-            SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)){
-            return session.getMapper(IProjectDAO.class).findById(id);
+            return session.getMapper(ISupplierDAO.class).findAll();
 
         } catch (IOException e) {
             logger.error(e);
@@ -52,10 +40,22 @@ public class ProjectMyBatis implements IProjectDAO {
     }
 
     @Override
-    public void update(Project project, Long id) throws SQLException, InterruptedException {
+    public Supplier findById(Long id) throws SQLException, InterruptedException {
         try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
             SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)){
-            session.getMapper(IProjectDAO.class).update(project, id);
+            return session.getMapper(ISupplierDAO.class).findById(id);
+
+        } catch (IOException e) {
+            logger.error(e);
+        }
+        return null;
+    }
+
+    @Override
+    public void update(Supplier supplier, Long id) throws SQLException, InterruptedException {
+        try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
+            SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)){
+            session.getMapper(ISupplierDAO.class).update(supplier, id);
 
         } catch (IOException e) {
             logger.error(e);
@@ -67,7 +67,7 @@ public class ProjectMyBatis implements IProjectDAO {
     public void delete(Long id) throws SQLException, InterruptedException {
         try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
             SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)){
-            session.getMapper(IProjectDAO.class).delete(id);
+            session.getMapper(ISupplierDAO.class).delete(id);
 
         } catch (IOException e) {
             logger.error(e);
@@ -76,10 +76,22 @@ public class ProjectMyBatis implements IProjectDAO {
     }
 
     @Override
-    public Project getProjectByEmployeeId(Long id) throws SQLException, InterruptedException {
+    public Supplier getSupplierByMaterialId(Long id) throws SQLException, InterruptedException {
         try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
             SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)){
-            return session.getMapper(IProjectDAO.class).getProjectByEmployeeId(id);
+            return session.getMapper(ISupplierDAO.class).getSupplierByMaterialId(id);
+
+        } catch (IOException e) {
+            logger.error(e);
+        }
+        return null;
+    }
+
+    @Override
+    public Supplier getSupplierByEquipmentId(Long id) throws SQLException, InterruptedException {
+        try(InputStream stream = Resources.getResourceAsStream("mybatis_config.xml");
+            SqlSession session = new SqlSessionFactoryBuilder().build(stream).openSession(true)){
+            return session.getMapper(ISupplierDAO.class).getSupplierByEquipmentId(id);
 
         } catch (IOException e) {
             logger.error(e);

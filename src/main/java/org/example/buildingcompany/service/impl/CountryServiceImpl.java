@@ -2,7 +2,7 @@ package org.example.buildingcompany.service.impl;
 
 import org.example.buildingcompany.classes.Country;
 import org.example.buildingcompany.dao.ICountryDAO;
-import org.example.buildingcompany.mybatis.daoimpl.CountryMyBatis;
+import org.example.buildingcompany.dao.mybatisimpl.CountryMyBatis;
 import org.example.buildingcompany.service.ICountryService;
 
 import java.sql.SQLException;
